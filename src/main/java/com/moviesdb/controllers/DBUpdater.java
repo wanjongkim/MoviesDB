@@ -20,4 +20,11 @@ public class DBUpdater {
 		updater.updatePlaying();
 		return "Success";
 	}
+	
+	@RequestMapping("/delete")
+	@ResponseBody
+	public String deleteAllTables() {
+		updater.deleteAllTables();
+		return "Success";
+	}
 }

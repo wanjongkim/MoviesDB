@@ -1,0 +1,53 @@
+.oswald {
+	font-family: 'Oswald', sans-serif; 
+	text-transform: uppercase;
+}
+
+.big {
+	font-size: 96px; 
+}
+
+.yellow {
+	color: #f7c611;
+}
+
+.cardo {
+	font-family: 'Cardo', serif;
+}
+
+.small_medium {
+	font-size:32px;
+}
+
+.small {
+	font-size:20px;
+}
+
+.light_grey {
+	color: #cfcab6; 
+}
+
+.medium {
+	font-size: 48px;
+}
+
+.medium_big {
+	font-size: 67px;	
+}
+
+.orange {
+	color: #f55e00;
+}
+
+.archivo {
+	font-family: 'Archivo Black', sans-serif;
+}
+
+.judson {
+	font-family: 'Judson', serif;
+}
+
+.no_deco {
+	text-decoration:none; 
+	color: black;
+}

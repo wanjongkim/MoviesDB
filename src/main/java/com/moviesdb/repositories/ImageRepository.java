@@ -6,5 +6,5 @@ import com.moviesdb.entities.Images;
 import com.moviesdb.entities.ImageId;
 
 public interface ImageRepository extends CrudRepository<Images, ImageId> {
-
+	
 }

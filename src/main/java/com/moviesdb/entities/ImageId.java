@@ -2,6 +2,7 @@ package com.moviesdb.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.ForeignKey;
 import javax.persistence.JoinColumn;
@@ -9,6 +10,8 @@ import javax.persistence.ManyToOne;
 
 @Embeddable
 public class ImageId implements Serializable {
+	private static final long serialVersionUID = -852838117059764880L;
+	@Column(name="path")
 	private String path;
 	@ManyToOne
 	@JoinColumn(name="mid", referencedColumnName="id", foreignKey = @ForeignKey(name="images_ibfk_1"))

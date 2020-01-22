@@ -9,6 +9,7 @@ import javax.persistence.ManyToOne;
 
 @Embeddable
 public class MovieGenreId implements Serializable {
+	private static final long serialVersionUID = -1163896587657758451L;
 	@ManyToOne
 	@JoinColumn(name="MoviesId", referencedColumnName="id", foreignKey = @ForeignKey(name="MoviesId"))
 	private Movies moviesId;

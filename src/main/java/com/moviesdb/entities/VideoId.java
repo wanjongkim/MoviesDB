@@ -10,6 +10,7 @@ import javax.persistence.ManyToOne;
 
 @Embeddable
 public class VideoId implements Serializable {
+	private static final long serialVersionUID = -7837553967278045018L;
 	@Column(name="Path")
 	private String path;
 	@ManyToOne

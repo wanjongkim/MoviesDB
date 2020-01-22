@@ -152,7 +152,7 @@ public class MoviesUpdater {
         for(int j=0; j<videos.size(); j++) {
         	JSONObject imageJSON = (JSONObject) videos.get(j);
         	Object languageObj = imageJSON.get("iso_639_1");
-        	if(languageObj == null || languageObj.toString().equalsIgnoreCase("en")) {
+        	if(languageObj != null && languageObj.toString().equalsIgnoreCase("en")) {
         		ImageId imageId = new ImageId(imageJSON.get("file_path").toString(), movie);
             	Images img = new Images(imageId);
             	imgRepo.save(img);
@@ -172,7 +172,20 @@ public class MoviesUpdater {
 				newGenre = genRepo.findByType(type);
 				movGenRepo.save(new MoviesGenre(new MovieGenreId(movie, newGenre)));
 			}
+			else {
+				Genre existingGenre = genRepo.findByType(type);
+				movGenRepo.save(new MoviesGenre(new MovieGenreId(movie, existingGenre)));
+			}
 		}
 		
 	}
+	public void deleteAllTables() {
+		movGenRepo.deleteAll();
+		genRepo.deleteAll();
+		imgRepo.deleteAll();
+		vidRepo.deleteAll();
+		movieRepo.deleteAll();
+		repo.deleteAll();
+	}
+	
 }
