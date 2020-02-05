@@ -22,4 +22,6 @@ public interface MovieRepository extends CrudRepository<Movies, Integer> {
 	List<Images> findSingleImage(@Param("id") Integer id, Pageable pageable);
 	@Query("SELECT img FROM Images img WHERE img.imageId.movie.id=:id")
 	List<Images> findAllMatchingImages(@Param("id") Integer id);
+	@Query("SELECT v FROM Videos v WHERE v.videoId.movie.id = :id")
+	List<Genre> findTrailer(@Param("id") Integer id, Pageable pageable);
 }

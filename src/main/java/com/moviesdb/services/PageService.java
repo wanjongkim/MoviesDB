@@ -26,9 +26,10 @@ public class PageService {
 		List<MovieInfo> infos = new ArrayList<>();
 		for(Movies m : movieRepo.findAll()) {
 			//List<Images> images = movieRepo.findSingleImage(m.getId(), PageRequest.of(0, 1));
-			//List<Videos> videos = movieRepo.findAllMatchingVideos(m.getId());
+			List<Videos> videos = movieRepo.findAllMatchingVideos(m.getId());
 			List<Genre> genres = movieRepo.findAllMatchingGenres(m.getId());
 			MovieInfo info = new MovieInfo(m, genres);
+			info.setVideos(videos);
 			/*
 			if(images.size()==1)
 				info = new MovieInfo(m, images.get(0), genres);
